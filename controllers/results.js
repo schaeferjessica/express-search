@@ -48,10 +48,17 @@ router.get('/', (req, res) => {
       },
     ],
   }]
+
+  const getLength = (array) => {
+    return array.length
+  }
+  
+  const resultLength = getLength(results);
+
   //console.log(req.body.search);
   // funktion results = resultes ..
   // contains the one title == req.body.search [{}]
-  res.render('results', {results})
+  res.render('results', {results, resultLength})
 })
 
 // export module
