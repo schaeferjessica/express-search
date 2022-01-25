@@ -1,7 +1,10 @@
-<div>HI {{user.name}} !</div>
-
-{{#if condition}}
-<div>a is true</div>
-{{else}}
-<div>a is false</div>
-{{/if}}
+<section class="search">
+  <a href="https://www.google.com/">
+    <img class="search__image" src="./images/google.png" alt="Google Logo">
+  </a>
+  <form action="#" class="search__form">
+    <label class="search__label screenreader-only" for="site-search">Search the site:</label>
+    <input class="search__input input-search" type="search" id="site-search" name="q">
+    <button class="search__button button-search">Search</button>
+  </form>
+</section>
