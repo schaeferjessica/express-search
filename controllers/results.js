@@ -4,10 +4,11 @@ const router = express.Router()
 
 // views
 
-// POST controller
-
 router.get('/', (req, res) => {
-  res.send('hi results');
+  let users = ['miriam', 'nora']
+  res.render('results', {
+    users
+  });
 })
 
 // export module

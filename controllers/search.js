@@ -4,12 +4,17 @@ const router = express.Router()
 
 // views
 
-// GET controller
-
 router.get('/', (req, res) => {
-  res.send('hi search');
+  let user = {
+    name: "jessi",
+    country: "germany"
+  }
+  let condition = false;
+  res.render('search', {
+    name: user.name,
+    country: user.country
+  });
 })
-
 
 // export
 module.exports = router
