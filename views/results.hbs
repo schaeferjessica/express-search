@@ -1,5 +1,35 @@
-<ul>
-  {{#each users as |user|}}
-  <li>{{user}}</li>
-  {{/each}}
-</ul>
+<div class="search__header">
+  <div class="search__inner">
+    <a href="https://www.google.com/">
+      <img class="search__header-image" src="img/google.png" alt="Google Logo">
+    </a>
+    <form action="#" class="search__header-form">
+      <label class="search__header-label screenreader-only" for="site-search">Search the site:</label>
+      <input class="search__header-input input-search" type="search" id="site-search" name="q">
+      <button class="search__header-button button-search">Search</button>
+    </form>
+  </div>
+</div>
+
+<section class="search__result">
+  <div class="search__result-inner">
+    <span class="search__result-count">1390 search results were found</span>
+
+    <ul class="search__result-list">
+      <li class="search__result-item">
+        <h2 class="search__result-title"><a class="search__result-title-link" href="https://www.google.com/">H2</a>
+        </h2>
+        <p class="search__result-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas hic nulla illum
+          expedita fugiat distinctio tempore accusantium voluptatibus, neque nihil, libero nesciunt, quasi nostrum
+          laboriosam temporibus omnis nisi perspiciatis pariatur.</p>
+        <ul class="search__result-innerlist">
+          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
+          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
+          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
+        </ul>
+        <a class="search__result-link" href="https://www.google.com/"></a>
+      </li>
+
+    </ul>
+  </div>
+</section>
