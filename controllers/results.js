@@ -4,7 +4,7 @@ const router = express.Router()
 
 // views
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   let results = [
   {
     title: 'JS tutorials',
@@ -56,8 +56,8 @@ router.get('/', (req, res) => {
   const resultLength = getLength(results);
 
   //console.log(req.body.search);
-  // funktion results = resultes ..
-  // contains the one title == req.body.search [{}]
+  // function results = resultes ..
+  // title == req.body.search [{}]
   res.render('results', {results, resultLength})
 })
 
