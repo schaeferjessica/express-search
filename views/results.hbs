@@ -16,20 +16,20 @@
     <span class="search__result-count">1390 search results were found</span>
 
     <ul class="search__result-list">
+      {{#each results as |item|}}
       <li class="search__result-item">
-        <h2 class="search__result-title"><a class="search__result-title-link" href="https://www.google.com/">H2</a>
+        <h2 class="search__result-title"><a class="search__result-title-link"
+            href="https://www.google.com/">{{item.title}}</a>
         </h2>
-        <p class="search__result-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas hic nulla illum
-          expedita fugiat distinctio tempore accusantium voluptatibus, neque nihil, libero nesciunt, quasi nostrum
-          laboriosam temporibus omnis nisi perspiciatis pariatur.</p>
+        <p class="search__result-text">{{item.description}}</p>
         <ul class="search__result-innerlist">
-          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
-          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
-          <li class="search__result-inneritem"><a href="https://www.google.com/">Lorem ipsum dolor</a></li>
+          {{#each item.links as |link|}}
+          <li class="search__result-inneritem"><a href="{{link.url}}/">{{link.title}}</a></li>
+          {{/each}}
         </ul>
         <a class="search__result-link" href="https://www.google.com/"></a>
       </li>
-
+      {{/each}}
     </ul>
   </div>
 </section>
