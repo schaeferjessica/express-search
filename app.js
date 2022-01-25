@@ -42,11 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 
-app.get('/', (request, respons) => {
-  respons.send('hi');
-})
-
-app.use('/search', require('./controllers/search'));
+app.use('/', require('./controllers/search'));
 app.use('/results', require('./controllers/results'));
 
 

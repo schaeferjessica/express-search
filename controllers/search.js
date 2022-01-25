@@ -5,15 +5,7 @@ const router = express.Router()
 // views
 
 router.get('/', (req, res) => {
-  let user = {
-    name: "jessi",
-    country: "germany"
-  }
-  let condition = false;
-  res.render('search', {
-    name: user.name,
-    country: user.country
-  });
+  res.render('search');
 })
 
 // export
