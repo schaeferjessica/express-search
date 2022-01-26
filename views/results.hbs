@@ -3,9 +3,9 @@
     <a href="/">
       <img class="search__header-image" src="img/google.png" alt="Google Logo">
     </a>
-    <form action="#" class="search__header-form">
+    <form action="/results" method="POST" class="search__header-form">
       <label class="search__header-label screenreader-only" for="site-search">Search the site:</label>
-      <input class="search__header-input input-search" type="search" id="site-search" name="q">
+      <input class="search__header-input input-search" type="search" id="site-search" name="search">
       <button class="search__header-button button-search">Search</button>
     </form>
   </div>
@@ -13,21 +13,11 @@
 
 <section class="search__result">
   <div class="search__result-inner">
-    <span class="search__result-count">{{filterResult.length}} search results were found</span>
+    <span class="search__result-count">{{results.length}} search results were found</span>
 
     <ul class="search__result-list">
-      {{#each filterResult as |item|}}
-      <li class="search__result-item">
-        <h2 class="search__result-title"><a class="search__result-title-link"
-            href="https://www.google.com/">{{item.title}}</a>
-        </h2>
-        <p class="search__result-text">{{item.description}}</p>
-        <ul class="search__result-innerlist">
-          {{#each item.links as |link|}}
-          <li class="search__result-inneritem"><a href="{{link.url}}/">{{link.title}}</a></li>
-          {{/each}}
-        </ul>
-      </li>
+      {{#each results as |item|}}
+      {{> result item=item}}
       {{/each}}
     </ul>
   </div>

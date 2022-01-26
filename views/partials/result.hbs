@@ -1,0 +1,11 @@
+<li class="search__result-item">
+  <h2 class="search__result-title"><a class="search__result-title-link"
+      href="https://www.google.com/">{{item.title}}</a>
+  </h2>
+  <p class="search__result-text">{{item.description}}</p>
+  <ul class="search__result-innerlist">
+    {{#each item.links as |link|}}
+    <li class="search__result-inneritem"><a href="{{link.url}}/">{{link.title}}</a></li>
+    {{/each}}
+  </ul>
+</li>
