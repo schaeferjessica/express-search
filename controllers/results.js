@@ -25,39 +25,33 @@ router.post('/', (req, res) => {
     ],
   },
   {
-    title: 'JS tutorials',
+    title: 'HTML tutorials',
     description: 'The best JavaScript tutorials in the galaxy!',
     url: 'https://www.w3schools.com',
     links: [
       {
-        title: 'JS for Beginners',
+        title: 'HTML for Beginners',
         url: 'https://www.w3schools.com/js'
       }, {
-        title: 'JS for the Web',
+        title: 'HTML for the Web',
         url: 'https://www.w3schools.com/js'
       },
     ],
   },
   {
-    title: 'JS tutorials',
+    title: 'CSS tutorials',
     description: 'The best JavaScript tutorials in the galaxy!',
     url: 'https://www.w3schools.com',
     links: [
       {
-        title: 'JS for Beginners',
+        title: 'CSS for Beginners',
         url: 'https://www.w3schools.com/js'
       }, {
-        title: 'JS for the Web',
+        title: 'CSS for the Web',
         url: 'https://www.w3schools.com/js'
       },
     ],
   }]
-
-  const getLength = (array) => {
-    return array.length
-  }
-  
-  const resultLength = getLength(results);
 
   const filterObject = (results) => {
     const newObject = [];
@@ -72,9 +66,7 @@ router.post('/', (req, res) => {
   
   const filterResult = filterObject(results);
 
-  // console.log(req.body.search);
-  // title == req.body.search [{}]
-  res.render('results', {results, resultLength, filterResult})
+  res.render('results', {results, filterResult})
 })
 
 // export module

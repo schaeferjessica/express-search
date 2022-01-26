@@ -13,10 +13,10 @@
 
 <section class="search__result">
   <div class="search__result-inner">
-    <span class="search__result-count">{{resultLength}} search results were found</span>
+    <span class="search__result-count">{{filterResult.length}} search results were found</span>
 
     <ul class="search__result-list">
-      {{#each results as |item|}}
+      {{#each filterResult as |item|}}
       <li class="search__result-item">
         <h2 class="search__result-title"><a class="search__result-title-link"
             href="https://www.google.com/">{{item.title}}</a>
