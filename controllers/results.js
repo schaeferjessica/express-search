@@ -4,9 +4,9 @@ const router = express.Router()
 
 // views
 
-//router.get('/', (req, res) => {
-  // code here
-//})
+router.get('/', (req, res) => {
+  res.render('results');
+})
 
 router.post('/', (req, res) => {
   let results = [
@@ -53,20 +53,21 @@ router.post('/', (req, res) => {
     ],
   }]
 
-  const filterObject = (results) => {
-    const newObject = [];
-    results.forEach(result => {
-      if(result.title == req.body.search) {
-        newObject.push(result);
-      }
-    })
-    console.log(newObject)
-    return newObject;
-  }
-  
-  const filterResult = filterObject(results);
+  results = results.filter(element => element.title.includes(req.body.search) || element.description.includes(req.body.search))
 
-  res.render('results', {results, filterResult})
+  //const filterObject = (results) => {
+  //  const newObject = [];
+  //  results.forEach(result => {
+  //    if(result.title == req.body.search) {
+  //      newObject.push(result);
+  //    }
+  //  })
+  //  return newObject;
+  //}
+  
+  //const filterResult = filterObject(results);
+
+  res.render('results', {results})
 })
 
 // export module
