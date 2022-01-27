@@ -11,10 +11,9 @@ module.exports = mongoose.model('results', {
       title: String,
       url: String,
     },
-  ],
+  ]
 });
 
-//MongoDB 7, 8
 //GS 11
 
 

@@ -6,7 +6,7 @@ const Results = require('../models/results');
 
 // views
 
-router.get('/', (req, res) => {
+router.get('/',  async (req, res) => {
   res.render('results');
 })
 
