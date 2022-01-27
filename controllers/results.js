@@ -1,6 +1,8 @@
 // import packages
-const express = require('express')
+const express = require('express');
+const async = require('hbs/lib/async');
 const router = express.Router()
+const Results = require('../models/results');
 
 // views
 
@@ -8,65 +10,10 @@ router.get('/', (req, res) => {
   res.render('results');
 })
 
-router.post('/', (req, res) => {
-  let results = [
-  {
-    title: 'JS tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'JS for Beginners',
-        url: 'https://www.w3schools.com/js'
-      }, {
-        title: 'JS for the Web',
-        url: 'https://www.w3schools.com/js'
-      },
-    ],
-  },
-  {
-    title: 'HTML tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'HTML for Beginners',
-        url: 'https://www.w3schools.com/js'
-      }, {
-        title: 'HTML for the Web',
-        url: 'https://www.w3schools.com/js'
-      },
-    ],
-  },
-  {
-    title: 'CSS tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
-    url: 'https://www.w3schools.com',
-    links: [
-      {
-        title: 'CSS for Beginners',
-        url: 'https://www.w3schools.com/js'
-      }, {
-        title: 'CSS for the Web',
-        url: 'https://www.w3schools.com/js'
-      },
-    ],
-  }]
-
-  results = results.filter(element => element.title.includes(req.body.search) || element.description.includes(req.body.search))
-
-  //const filterObject = (results) => {
-  //  const newObject = [];
-  //  results.forEach(result => {
-  //    if(result.title == req.body.search) {
-  //      newObject.push(result);
-  //    }
-  //  })
-  //  return newObject;
-  //}
+router.post('/', async (req, res) => {
+  let results = await Results.find({})
   
-  //const filterResult = filterObject(results);
-
+  //results = results.filter(element => element.title.includes(req.body.search) || element.description.includes(req.body.search))
   res.render('results', {results})
 })
 
