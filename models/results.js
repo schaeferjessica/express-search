@@ -1,21 +1,18 @@
 const mongoose = require('mongoose')
 
-// results moodel
+// results module
 
 module.exports = mongoose.model('results', {
-  title: {
-    type: String,
-    required: true
-  },
-  url: String,
+  title: String,
   description: String,
+  url: String,
   links: [
     {
       title: String,
-      url: String
-    }
-  ]
-})
+      url: String,
+    },
+  ],
+});
 
 //MongoDB 7, 8
 //GS 11
