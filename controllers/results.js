@@ -11,10 +11,13 @@ router.get('/',  async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  let results = await Results.find({})
-  
-  //results = results.filter(element => element.title.includes(req.body.search) || element.description.includes(req.body.search))
-  res.render('results', {results})
+  try {
+    let results = await Results.find({})
+    //results = results.filter(element => element.title.includes(req.body.search) || element.description.includes(req.body.search))
+    res.render('results', {results})
+  } catch (err) {
+    throw err;
+  }
 })
 
 // export module
